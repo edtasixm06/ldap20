@@ -8,6 +8,7 @@ Podeu trobar la documentació del mòdul a [ASIX-M06](https://sites.google.com/s
 
 ASIX M06-ASO Escola del treball de barcelona
 
+Imatge:
 
 * **edtasixm06/ldap20:acls** Imatge per a fer proves de modificació de les acls usant
   fitxers de modificació. S'ha incorporat la BD cn=config per a l'administració

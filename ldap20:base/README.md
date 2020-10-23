@@ -9,6 +9,8 @@ Podeu trobar la documentació del mòdul a [ASIX-M06](https://sites.google.com/s
 ASIX M06-ASO Escola del treball de barcelona
 
 
+Imatge:
+
  * **edtasixm06/ldap20:base** Imatge base de un servidor ldap que funciona amb detach.
    carrega edt.org, els elements bàsics i els usuaris bàsics.
 

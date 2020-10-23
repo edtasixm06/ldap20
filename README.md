@@ -1,6 +1,6 @@
 # LDAP
 ## @edt ASIX M06-ASO
-###Curs 2020 - 2021
+### Curs 2020 - 2021
 
 Podeu trobar les imatges docker al Dockehub de [edtasixm06](https://hub.docker.com/u/edtasixm06/)
 

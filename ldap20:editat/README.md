@@ -8,6 +8,7 @@ Podeu trobar la documentació del mòdul a [ASIX-M06](https://sites.google.com/s
 
 ASIX M06-ASO Escola del treball de barcelona
 
+Imatge:
 
 * **edtasixm06/ldap20:editat** Imatge base editada ara de tipus mdb, amb
    un passwd de manager xifrat i un únic fitxer ldif amb tota la bd.
