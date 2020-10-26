@@ -25,14 +25,40 @@ docker run --rm --name ldap.edt.org -h ldap.edt.org --net 2hisix -p 389:389 -d e
 ```
 
 
-Exemple:
-access to * by * read
-access to * by * write
-access to * by self write by * read
+Exemples:
+```
+  access to * by * read
+  access to * by * write
+  access to * by self write by * read
+  access to * by self write by * read
+```
 
-access to * 
-       by self write 
-       by * read
+Exemples de llistar la configuració dinàmicament:
+```
+ldapsearch -x -h localhost -LLL -D ‘cn=Sysadmin,cn=config’ -w syskey -b ‘cn=config’
+ldapsearch -x -h localhost -LLL -D ‘cn=Sysadmin,cn=config’ -w syskey -b ‘cn=config’ dn
+ldapsearch -x -h localhost -LLL -D ‘cn=Sysadmin,cn=config’ -w syskey -b ‘olcDatabase={1}bdb,cn=config’
+ldapsearch -x -h localhost -LLL -D ‘cn=Sysadmin,cn=config’ -w syskey -b ‘olcDatabase={1}bdb,cn=config’  olcAccess
+```
+
+Exemples de modificació dinàmica: fitxer de modificació
+```
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+replace: olcAccess
+olcAccess: to attrs=UserPassword by self write by * auth
+olcAccess: to * by * read
+
+
+#olcAccess: to * attrs=homePhone by dn.exact="cn=Marta Mas,ou=usuaris,dc=edt,dc=org" write by users write
+#olcAccess:  to attrs=homePhone by * read
+#olcAccess: to * by * write
+```
+
+Modificar amb ldapmodify
+```
+ldapmodify -x -h localhost -D ‘cn=Sysadmin,cn=config’ -w syskey -f entry.ldif
+```
        
 
 
