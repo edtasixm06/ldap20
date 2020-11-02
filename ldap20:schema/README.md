@@ -21,6 +21,7 @@ Imatge:
   *  C) objecte auxiliar (implementat acompanyant els usuaris actuals inetOrgPerson 
      i posixAccount)
 
+
 Detach:
 ```
 docker run --rm --name ldap.edt.org -h ldap.edt.org --net 2hisix -p 389:389 -d edtasixm06/ldap20:schema
