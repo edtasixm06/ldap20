@@ -8,6 +8,7 @@ x-web: www.ramon.com
 x-lesionat: FALSE
 homePhone: 123456789
 mail: ramon@barca.cat
+x-photo:< file:///opt/docker/photo1.jpeg
 
 dn: cn=ferran roig,ou=usuaris,dc=edt,dc=org
 objectClass: x-Futbolista
@@ -19,7 +20,7 @@ x-web: www.ferran.com
 x-lesionat: FALSE
 homePhone: 5551155
 mail: ferran@barca.cat
-
+x-photo:< file:///opt/docker/photo2.jpeg
 
 
 
