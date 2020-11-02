@@ -17,7 +17,7 @@ Imatge:
   S'han fet tres exemples de esquemes de 'fulboliestes':
 
   *  A) objecte structural derivat de inetOrgPerson
-  *  B) objecte structural derivat de tot
+  *  B) objecte structural derivat de TOP
   *  C) objecte auxiliar (implementat acompanyant els usuaris actuals inetOrgPerson 
      i posixAccount)
 
