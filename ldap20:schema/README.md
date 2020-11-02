@@ -11,7 +11,15 @@ ASIX M06-ASO Escola del treball de barcelona
 Imatge:
 
 * **edtasixm06/ldap20:schema** Afegim a la BD edt,org nous objectClass i 
-  tributs definits per nosaltres: futbolistes.
+  atributs definits per nosaltres en un schema inventat: futbolistes.schema
+
+  Per cada schema s'han definit dades a inserir en la base de dades. 
+  S'han fet tres exemples de esquemes de 'fulboliestes':
+
+  *  A) objecte structural derivat de inetOrgPerson
+  *  B) objecte structural derivat de tot
+  *  C) objecte auxiliar (implementat acompanyant els usuaris actuals inetOrgPerson 
+     i posixAccount)
 
 Detach:
 ```
