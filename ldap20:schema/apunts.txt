@@ -1,0 +1,19 @@
+
+OID 1.1.2 ldap
+
+OID 1.1.2.1 attributeTypes personalitzar
+      dorsal 1.1.2.1.x
+                    .x
+                    .x
+
+OID 1.1.2.2. objectClass personalitzats
+      futbolista 1.1.2.2.1
+                        .2
+                        .3 
+      edt.org 1.1.2.2.100.1.a
+                           .b
+                           .c
+                         .2.x
+                         .3.x
+
+
