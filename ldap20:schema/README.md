@@ -82,6 +82,17 @@ Tres exemples de objectClass de *futbolista* diferents:
    Això implica que a més a més dels atributs que tindrà com a futbolista hereterà els
     de inetOrgPerson (on cn i sn són obligatoris).
 
+```
+objectclass ( 1.1.2.2.1 NAME 'x-Futbolista'
+    DESC 'Futboleros crazys'
+    SUP inetOrgPerson
+    STRUCTURAL
+    MUST x-equip
+    MAY (x-dorsal $ x-web $ x-photo $ x-lesionat)
+    )
+```
+
+
  * **B) Estructural derivat de TOP**
 
     Crear un objectClass Futbolista que sigui estructural i derivat de TOP, és a dir, de ningú.
@@ -90,6 +101,27 @@ Tres exemples de objectClass de *futbolista* diferents:
 
     Apareix el problema del dn. Com s’identifica un futbolista si no hi ha cn? 
     Això exigeix modificar l’schema i afegir un nou atribut amb el nom del futbolista, que es únic i actúa de RDN.
+
+```
+attributetype ( 1.1.2.1.6 NAME 'x-lonom'
+    DESC 'lo nom de lo jugador'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    SINGLE-VALUE )
+```
+
+```
+objectclass ( 1.1.2.2.1 NAME 'x-Futbolista'
+    DESC 'Futboleros crazys'
+    SUP TOP
+    STRUCTURAL
+    MUST ( x-lonom $ x-equip )
+    MAY (x-dorsal $ x-web $ x-photo $ x-lesionat)
+    )
+```
+
+
 
  * **C) Auxiliary derivat de TOP**
 
@@ -100,19 +132,18 @@ Tres exemples de objectClass de *futbolista* diferents:
    structural (per exemple inietOrgPerson). Així per exemple els futbolistes en realitat seran
     entitats inetOrgPerson i x-Futbolista (els dos objectClass).
 
-
 ```
 objectclass ( 1.1.2.2.1 NAME 'x-Futbolista'
     DESC 'Futboleros crazys'
-    SUP inetOrgPerson
-    STRUCTURAL
+    SUP TOP
+    AUXILIARY
     MUST x-equip
-    MAY (x-dorsal $ x-web $ x-photo $ x-lesionat) 
+    MAY ( x-lonom $ x-dorsal $ x-web $ x-photo $ x-lesionat )
     )
 ```
 
 
-Detach:
+Funcionament en detach:
 ```
 docker run --rm --name ldap.edt.org -h ldap.edt.org --net 2hisix -p 389:389 -d edtasixm06/ldap20:schema
 ```
