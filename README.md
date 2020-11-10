@@ -30,6 +30,16 @@ ASIX M06-ASO Escola del treball de barcelona
   *  C) objecte auxiliar (implementat acompanyant els usuaris actuals inetOrgPerson
      i posixAccount)
 
+* **edtasixm06/ldap20:group** Imatge amb usuaris identificats pel uid
+  per exemple uid=pere,ou=usuaris,dc=edt,dc=org. S0han afegit grups dins de una
+  ou=grups que conté els grups, i s'hi han posat els usuaris.
+
+
+* **edtasixm06/ldap20:practica** Practica amb schema Master
+  Afegeix a la base de dades un achema per saber si els usuaris han fet o no un master.
+  També afegeix a dos dels usuaris existents un master, i crea un nou
+  usuari Ramon que té un master.
+
 * **edtasixm06/phpldapadmin:20** Imatge amb un servidor phpldapadmin. Connecta a al servidor ldap
   anomenat *ldap.edt.org* per accedir a les bases de dades *dc=edt,dc=org* i *cn=config*. Aquesta imatge
   està basada en fedora:27 per evitar el canvi de sintaxis de PHP 7.4.
