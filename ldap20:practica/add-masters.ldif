@@ -48,6 +48,7 @@ dn: uid=ramon,ou=usuaris,dc=edt,dc=org
 changetype: add
 objectclass: posixAccount
 objectclass: inetOrgPerson
+objectClass: x-master
 cn: Ramon Pou
 cn: Ramonet Pou
 sn: Pou
@@ -56,10 +57,16 @@ mail: ramon@edt.org
 description: Watch out for this guy
 ou: Profes
 uid: ramon
-uidNumber: 500
+uidNumber: 5005
 gidNumber: 601
-homeDirectory: /tmp/home/pau
-userPassword: {SSHA}NDkipesNQqTFDgGJfyraLz/csZAIlk2/
+homeDirectory: /tmp/home/ramon
+userPassword: {SSHA}RX8eJ0mLWrCH9AHzGsV4NVcKXJa8bRRD
+x-famaster: TRUE
+x-nommaster: noessap
+x-notamaster: 10
+x-webmaster: https://www.youtube.com/watch?v=lucshSZihQo
+x-fotoalum:< file:///opt/docker/foto_cara/casado.jpg
+x-docum:< file:///opt/docker/pdf_alum/casado.pdf
 
 
 
