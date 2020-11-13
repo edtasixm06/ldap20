@@ -10,32 +10,17 @@ ASIX M06-ASO Escola del treball de barcelona
 
 Imatge:
 
-* **edtasixm06/ldap20:group** Imatge amb usuaris identificats pel uid
-  per exemple uid=pere,ou=usuaris,dc=edt,dc=org. S0han afegit grups dins de una
-  ou=grups que conté els grups, i s'hi han posat els usuaris.
-
-
-```
-dn: ou=grups,dc=edt,dc=org
-ou: grups
-description: Container per a grups del sistema linux
-objectclass: organizationalunit
-```
-
-```
-dn: cn=professors,ou=grups,dc=edt,dc=org
-objectclass: posixGroup
-cn: professors
-gidNumber: 601
-description: Grup de professors
-memberUid: pau
-memberUid: pere
-memberUid: jordi
-```
+* **edtasixm06/ldap20:entrypoint** Imatge amb varies opcions d'arrencada
+  segons el valor que passem: start, initdb, initdbedt.
+  Usem volumes per tenir *permanència* de dades.
+  
+  * initdbedt crea tota la base de dades edt (esborra tot el que hi havia prèviament). Hi posa la xixa.
+  * initdb esborra tot el que hi havia i crea la base de dades sense xixa.
+  * start engega el servidor
 
 Detach:
 ```
-docker run --rm --name ldap.edt.org -h ldap.edt.org --net 2hisix -p 389:389 -d edtasixm06/ldap20:group
+$ docker run --rm --name ldap.edt.org -h ldap.edt.org --net 2hisix -p 389:389 -v ldap-config:/etc/openldap/slapd.d -v ldap-data:/var/lib/ldap -d edtasixm06/ldap20:entrypoint initdbedt
 ```
 
 
