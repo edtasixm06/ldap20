@@ -8,5 +8,5 @@ RUN mkdir /opt/docker
 COPY * /opt/docker/
 RUN chmod +x /opt/docker/startup.sh
 WORKDIR /opt/docker
-ENTRYPOINT /opt/docker/startup.sh
+ENTRYPOINT [ "/bin/bash", "/opt/docker/startup.sh" ]
 EXPOSE 389

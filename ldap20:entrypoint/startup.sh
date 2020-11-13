@@ -28,6 +28,7 @@ function start(){
   /sbin/slapd -d0 -h "ldap:// ldaps:// ldapi://"
 }
 
+echo "startup: $1, $*"
 case $1 in
   initdbedt)
     echo "initdbedt"
