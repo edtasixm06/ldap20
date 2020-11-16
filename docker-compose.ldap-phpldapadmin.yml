@@ -20,14 +20,6 @@ services:
      - "80:80"
     networks:
      - 2hisix
-  portainer:
-    image: portainer/portainer
-    container_name: portainer.edt.org
-    hostname: portainer.edt.org
-    ports: 
-     - "9000:9000"
-    volumes:
-     - /var/run/docker.sock:/var/run/docker.sock 
 networks:
   2hisix:
 volumes:
